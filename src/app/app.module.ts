@@ -12,18 +12,18 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { Utilisateur } from './utilisateur/utilisateur.component/utilisateur.component.component';
-import { Affaire } from './component-model/affaire.component/affaire.component.component';
-import { Tache } from './component-model/tache.component/tache.component.component';
-import { Tribunal } from './component-model/tribunal.component/tribunal.component.component';
-import { Role } from './component-model/role.component/role.component.component';
-import { Phase } from './component-model/phase.component/phase.component.component';
 import { PhaseComponent } from './component-model/phase/phase.component';
 import { RoleComponent } from './component-model/role/role.component';
 import { TribunalComponent } from './component-model/tribunal/tribunal.component';
 import { TacheComponent } from './component-model/tache/tache.component';
 import { AffaireComponent } from './component-model/affaire/affaire.component';
 import { UtilisateurComponent } from './component-model/utilisateur/utilisateur.component';
+import { UtilisateurService } from './service/utilisateur.service';
+import { AffaireService } from './service/affaire.service';
+import { RoleService } from './service/role.service';
+import { TribunalService } from './service/tribunal.service';
+import { TacheService } from './service/tache.service';
+import { PhaseService } from './service/phase.service';
 
 @NgModule({
   imports: [
@@ -39,12 +39,6 @@ import { UtilisateurComponent } from './component-model/utilisateur/utilisateur.
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    Utilisateur.ComponentComponent,
-    Affaire.ComponentComponent,
-    Tache.ComponentComponent,
-    Tribunal.ComponentComponent,
-    Role.ComponentComponent,
-    Phase.ComponentComponent,
     PhaseComponent,
     RoleComponent,
     TribunalComponent,
@@ -53,7 +47,7 @@ import { UtilisateurComponent } from './component-model/utilisateur/utilisateur.
     UtilisateurComponent
 
   ],
-  providers: [],
+  providers: [UtilisateurService, AffaireService, RoleService, TribunalService, TacheService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
