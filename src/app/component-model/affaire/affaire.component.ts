@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Affaire } from 'src/app/model/affaire';
+import { AffaireService } from 'src/app/service/affaire.service';
 
 @Component({
   selector: 'app-affaire',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AffaireComponent implements OnInit {
 
-  constructor() { }
+  affaires:any[];
+  affaire: Affaire = new Affaire();
+  constructor(private affaireService:AffaireService) { }
 
   ngOnInit() {
+    this.loadAffaire();
   }
+
+  loadAffaire(){
+    this.affaireService.getAllAffaires().subscribe(data => {this.affaires = data;}, 
+      error => {console.log(error);});
+  }
+
+  createAffaire(){
+    this.affaireService.saveAffaire(this.affaire).subscribe(()=>{this.loadAffaire();
+      this.affaire = new Affaire();})
+  }
+
+  deleteAffaire(affaire){
+    this.affaireService.deleteAffaire(affaire.idAffaire).subscribe(()=>
+      {this.loadAffaire();}, error=>console.log(error));
+  }
+
 
 }

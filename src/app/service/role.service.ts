@@ -11,7 +11,7 @@ export class RoleService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllRole() : Observable<any> {
+  public getAllRoles() : Observable<any> {
     return this.http.get('http://localhost:8080/GestionDeptContentieuxDynamic/roles').map(response => response);
   }
 

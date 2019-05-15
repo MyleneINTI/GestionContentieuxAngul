@@ -11,7 +11,7 @@ export class TacheService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllTache() : Observable<any> {
+  public getAllTaches() : Observable<any> {
     return this.http.get('http://localhost:8080/GestionDeptContentieuxDynamic/taches').map(response => response);
   }
 
