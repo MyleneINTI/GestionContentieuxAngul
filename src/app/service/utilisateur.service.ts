@@ -26,7 +26,7 @@ export class UtilisateurService {
     return this.http.delete('http://localhost:8080/GestionDeptContentieuxDynamic/utilisateurs/'+id);
   }
 
-  public updateUtiliasteur(utilisateur: any): Observable<any> {
+  public updateUtilisateur(utilisateur: any): Observable<any> {
     var userParse = JSON.parse(utilisateur); //Parsing pour passer de JSON à User
     return this.http.put('http://localhost:8080/GestionDeptContentieuxDynamic/utilisateurs/'+userParse.idUtilisateur, userParse).map(response => response);
   }

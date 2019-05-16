@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "now-ui-dashboard-angular": {
+    "GestionContentieux": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -21,10 +21,9 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
-              "node_modules/ngx-toastr/toastr.css",
-              "src/assets/scss/now-ui-dashboard.scss",
-              "src/assets/demo/demo.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
             ],
             "scripts": [
               "node_modules/chart.js/dist/Chart.min.js"
@@ -53,18 +52,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "now-ui-dashboard-angular:build"
+            "browserTarget": "GestionContentieux:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "now-ui-dashboard-angular:build:production"
+              "browserTarget": "GestionContentieux:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "now-ui-dashboard-angular:build"
+            "browserTarget": "GestionContentieux:build"
           }
         },
         "test": {
@@ -74,14 +73,9 @@
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [
-              "node_modules/chart.js/dist/Chart.min.js"
-            ],
+            "scripts": [],
             "styles": [
-              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
-              "node_modules/ngx-toastr/toastr.css",
-              "src/assets/scss/now-ui-dashboard.scss",
-              "src/assets/demo/demo.css"
+              "src/styles.css"
             ],
             "assets": [
               "src/assets",
@@ -101,7 +95,7 @@
         }
       }
     },
-    "now-ui-dashboard-angular-e2e": {
+    "GestionContentieux-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -110,7 +104,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "now-ui-dashboard-angular:serve"
+            "devServerTarget": "GestionContentieux:serve"
           }
         },
         "lint": {
@@ -125,14 +119,5 @@
       }
     }
   },
-  "defaultProject": "now-ui-dashboard-angular",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "scss"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "app"
-    }
-  }
+  "defaultProject": "GestionContentieux"
 }
